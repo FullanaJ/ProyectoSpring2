@@ -11,12 +11,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
+@RequestMapping(value = "/api")
 public class APIController {
     @Autowired
     private PilotoServicio pilotoServicio;
 
     // GET de todos los pilotos, devuelve un JSON con todos los pilotos
-    @GetMapping(value = "/api/pilotos")
+    @GetMapping(value = "/pilotos")
     public ResponseEntity<List<Piloto>> getProduct()
     {
         List<Piloto> pilotos = pilotoServicio.findAllPilotos();
